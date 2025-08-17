@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Control Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold">Smart Home Dashboard</h1>
+                <p class="text-sm opacity-75">Last updated: <span id="last-updated">Just now</span></p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <div class="relative">
+                    <button id="notifications" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                        <span class="absolute top-0 right-0 h-3 w-3 bg-red-500 rounded-full"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Home Status</h2>
+                    <div class="flex items-center">
+                        <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                        <span>Secure</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <div class="device-icon mx-auto mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <p>Lights</p>
+                        <p class="font-medium">3/8 on</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="device-icon mx-auto mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <p>Energy</p>
+                        <p class="font-medium">42%</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="device-icon mx-auto mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <p>Security</p>
+                        <p class="font-medium">1 alert</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h2 class="text-xl font-semibold mb-4">Temperature</h2>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <div class="ml-3">
+                            <p class="text-sm">High temperature</p>
+                            <p class="font-bold text-2xl">28°C</p>
+                        </div>
+                    </div>
+                    <div class="w-24">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96b4aa9a-cc08-4d63-bff1-169fa264265a.png" alt="Thermometer visualization showing current temperature at 28 degrees Celsius with red indicator line" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6 security-alarm">
+                <h2 class="text-xl font-semibold mb-4">Security Alert</h2>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <div class="ml-3">
+                        <p>Motion detected at front door</p>
+                        <p class="text-sm opacity-75">2 minutes ago</p>
+                    </div>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-2">
+                    <button class="py-2 px-4 bg-red-500 text-white rounded-lg">View Camera</button>
+                    <button class="py-2 px-4 bg-gray-100 dark:bg-gray-600 rounded-lg">Dismiss</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Lights Control</h2>
+                    <label class="toggle-btn">
+                        <input type="checkbox" id="all-lights-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="device-icon mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Living Room</p>
+                                <p class="text-sm opacity-75">60% brightness</p>
+                            </div>
+                        </div>
+                        <label class="toggle-btn">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="device-icon mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Kitchen</p>
+                                <p class="text-sm opacity-75">Off</p>
+                            </div>
+                        </div>
+                        <label class="toggle-btn">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="device-icon mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Bedroom</p>
+                                <p class="text-sm opacity-75">30% brightness</p>
+                            </div>
+                        </div>
+                        <label class="toggle-btn">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h2 class="text-xl font-semibold mb-4">Thermostat</h2>
+                <div class="flex items-center justify-center mb-6">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2a1bb3f4-583c-448a-8a02-75e06cb6849d.png" alt="Circular thermostat display showing 22 degrees Celsius with blue to red gradient color scale" />
+                </div>
+                
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-sm opacity-75">Current temperature</p>
+                        <p class="font-bold text-3xl">22°C</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm opacity-75">Target temperature</p>
+                        <p class="font-bold text-3xl"><span id="target-temp">22</span>°C</p>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <input type="range" min="16" max="30" value="22" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer temperature-slider" id="temp-slider">
+                    <div class="flex justify-between text-xs opacity-75 mt-1">
+                        <span>16°C</span>
+                        <span>30°C</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2">
+                    <button class="py-2 bg-gray-100 dark:bg-gray-700 rounded-lg">Cool</button>
+                    <button class="py-2 bg-indigo-600 text-white rounded-lg">Auto</button>
+                    <button class="py-2 bg-gray-100 dark:bg-gray-700 rounded-lg">Heat</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card p-6">
+                <h2 class="text-xl font-semibold mb-4">Security Cameras</h2>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf953d9c-0245-42ab-a568-c53ea6839109.png" alt="Front door camera view showing entryway with welcome mat and potted plants" class="w-full h-full object-cover"/>
+                        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
+                            <p>Front Door</p>
+                        </div>
+                    </div>
+                    <div class="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/696ffd8b-e868-4de2-9d1b-504d2b842524.png" alt="Backyard camera view showing patio with outdoor furniture and garden area" class="w-full h-full object-cover"/>
+                        <div class="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
+                            <p>Backyard</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full py-2 bg-indigo-600 text-white rounded-lg">View All Cameras</button>
+            </div>
+
+            <div class="card p-6">
+                <h2 class="text-xl font-semibold mb-4">Energy Usage</h2>
+                <div class="mb-4">
+                    <div class="flex justify-between mb-1">
+                        <span>Today's Usage</span>
+                        <span>3.2 kWh</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 45%"></div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-1">
+                        <span>Weekly Average</span>
+                        <span>2.8 kWh</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 38%"></div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    <p>You're using 12% less than last week</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
