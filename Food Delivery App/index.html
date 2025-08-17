@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBite - Food Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+
+
+</head>
+<body class="bg-gray-50">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b31b684a-eac0-4b63-8cb4-80077cffd3e2.png" alt="QuickBite logo - A stylized Q with a bite mark out of it in orange and white colors" class="h-10 w-10">
+                <span class="text-xl font-bold text-orange-600">QuickBite</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-700 hover:text-orange-600 transition">Home</a>
+                <a href="#" class="text-gray-700 hover:text-orange-600 transition">Restaurants</a>
+                <a href="#" class="text-gray-700 hover:text-orange-600 transition">My Orders</a>
+                <a href="#" class="text-gray-700 hover:text-orange-600 transition">Account</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="relative text-gray-700 hover:text-orange-600 transition">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </button>
+                <button class="relative text-gray-700 hover:text-orange-600 transition">
+                    <i class="fas fa-bell text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">1</span>
+                </button>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <div class="hidden md:flex items-center space-x-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1b10fe98-7ee4-469d-a8de-d213e977460f.png" alt="User profile picture showing a young professional in casual attire, smiling" class="h-8 w-8 rounded-full">
+                    <span class="text-sm font-medium">Vaishnavi Chittranshi</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20 pb-16">
+        
+        <div class="relative bg-gradient-to-r from-orange-500 to-orange-400 h-64 md:h-80 flex items-center justify-center">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/119ad72b-7610-4293-8078-f86be51cb5d2.png" alt="Variety of delicious foods on a table including pizza, sushi, and salads with warm lighting" class="absolute inset-0 w-full h-full object-cover opacity-20">
+            <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">Hungry? You're in the right place</h1>
+                <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-lg">
+                    <input type="text" placeholder="Search for restaurants or cuisines..." class="flex-grow px-4 py-3 focus:outline-none">
+                    <button class="bg-orange-600 text-white px-6 py-3 hover:bg-orange-700 transition">Search</button>
+                </div>
+                <p class="text-white mt-3">We deliver from 100+ restaurants in your area</p>
+            </div>
+        </div>
+
+        
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold mb-6">Popular Categories</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <button class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center hover:shadow-md transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/337341eb-0cd0-4253-9088-da28066dee17.png" alt="Italian cuisine with pasta and pizza dishes" class="h-16 w-16 mb-2">
+                    <span class="text-sm font-medium">Italian</span>
+                </button>
+                <button class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center hover:shadow-md transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b7bde286-768d-4027-bcda-5c3b6002ff47.png" alt="Asian cuisine with sushi and stir fry dishes" class="h-16 w-16 mb-2">
+                    <span class="text-sm font-medium">Asian</span>
+                </button>
+                <button class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center hover:shadow-md transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/be5d61bb-8e48-4cc7-96cd-acf62a4e9096.png" alt="Mexican food with tacos and nachos" class="h-16 w-16 mb-2">
+                    <span class="text-sm font-medium">Mexican</span>
+                </button>
+                <button class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center hover:shadow-md transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c9a01876-39c4-407e-935a-4c8023e63f7c.png" alt="American fast food with burgers and fries" class="h-16 w-16 mb-2">
+                    <span class="text-sm font-medium">Burgers</span>
+                </button>
+                <button class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center hover:shadow-md transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/64aad153-7d0a-45ea-bddc-992aca4d6573.png" alt="Healthy salads with fresh ingredients" class="h-16 w-16 mb-2">
+                    <span class="text-sm font-medium">Salads</span>
+                </button>
+                <button class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center hover:shadow-md transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5e6c56fb-dcb8-4d36-aff3-746e970c3f7d.png" alt="Desserts including cakes and ice cream" class="h-16 w-16 mb-2">
+                    <span class="text-sm font-medium">Desserts</span>
+                </button>
+            </div>
+        </div>
+
+        
+        <div class="bg-orange-50 py-6">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-bold">Your Active Orders</h2>
+                    <button class="text-orange-600 hover:underline">View All</button>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        
+                        <div class="relative mb-6">
+                            <div class="absolute left-4 top-0 h-full w-0.5 bg-gray-200">
+                                <div class="absolute top-0 left-0 h-1/2 w-0.5 bg-orange-600" style="height: 70%;"></div>
+                            </div>
+                            
+                            <div class="space-y-8">
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-6">
+                                        <h3 class="text-lg font-semibold">Order Placed</h3>
+                                        <p class="text-gray-600">Your order has been received</p>
+                                        <p class="text-sm text-gray-500">12:15 PM</p>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="ml-6">
+                                        <h3 class="text-lg font-semibold">Preparing</h3>
+                                        <p class="text-gray-600">Restaurant is preparing your food</p>
+                                        <p class="text-sm text-gray-500">12:22 PM</p>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center text-white pulse-animation">
+                                        <i class="fas fa-biking"></i>
+                                    </div>
+                                    <div class="ml-6">
+                                        <h3 class="text-lg font-semibold">On the Way</h3>
+                                        <p class="text-gray-600">Your order is being delivered</p>
+                                        <div class="flex items-center mt-2">
+                                            <div class="relative">
+                                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/022eeefc-976c-449d-a678-79ba409781a2.png" alt="Delivery person on a bike wearing a QuickBite uniform" class="h-10 w-10 rounded-full border-2 border-white shadow">
+                                                <div class="absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border border-white"></div>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-sm font-medium">Rohit.</p>
+                                                <div class="flex items-center">
+                                                    <span class="text-sm text-gray-600">ETA: 15 min</span>
+                                                    <button class="ml-3 text-orange-600 text-sm flex items-center">
+                                                        <i class="fas fa-phone-alt mr-1 text-xs"></i> Call
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-gray-300 flex items-center justify-center text-gray-600">
+                                        <i class="far fa-flag"></i>
+                                    </div>
+                                    <div class="ml-6">
+                                        <h3 class="text-lg font-semibold text-gray-500">Delivery</h3>
+                                        <p class="text-gray-400">Awaiting delivery</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="h-60 bg-gray-200 rounded-lg relative overflow-hidden">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5ef931cd-0059-449d-a097-449dbd4a110d.png" alt="Map showing delivery route from restaurant to customer location" class="w-full h-full object-cover">
+                                    <div class="absolute top-4 left-4 bg-white p-2 rounded shadow">
+                                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c294822b-9001-4d84-8fe2-c55312ba6270.png" alt="Live tracking map with delivery path and estimated time remaining" class="h-32 w-32">
+                                    </div>
+                                    <div class="absolute bottom-4 right-4 bg-white px-3 py-2 rounded shadow flex items-center">
+                                        <i class="fas fa-location-arrow text-orange-600 mr-2"></i>
+                                        <span>Live Tracking</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold mb-3">Order #QB-28374</h3>
+                                <div class="border-b pb-3 mb-3">
+                                    <div class="flex justify-between">
+                                        <span>1x Margherita Pizza</span>
+                                        <span>$12.99</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm text-gray-600">
+                                        <span>Extra cheese</span>
+                                        <span>+$1.50</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>1x Garlic Bread</span>
+                                        <span>$4.99</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between font-medium">
+                                    <span>Delivery Fee</span>
+                                    <span>$2.99</span>
+                                </div>
+                                <div class="flex justify-between font-medium text-lg mt-2">
+                                    <span>Total</span>
+                                    <span>$22.47</span>
+                                </div>
+                                <button class="w-full bg-orange-600 text-white py-3 rounded-lg mt-4 hover:bg-orange-700 transition">
+                                    Order Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">Nearby Restaurants</h2>
+                <button class="text-orange-600 hover:underline">See All</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17562597-c378-41ef-8bfc-745f76a492d2.png" alt="Italian trattoria with checkered tablecloths and pizza oven visible" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold">Pizza Napoli</h3>
+                            <div class="flex items-center bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i> 4.7
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Italian • $ • 1.2 mi</p>
+                        <div class="flex items-center text-sm text-gray-500 mt-2">
+                            <i class="fas fa-clock mr-1"></i> 25-35 min
+                            <span class="mx-2">•</span>
+                            <span class="text-orange-600 font-medium">$2.99 delivery</span>
+                        </div>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Pizza</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Pasta</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Italian</span>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9a09d8c7-b769-4ce6-97bd-9233dca29d95.png" alt="Modern sushi bar with fresh fish display and Japanese decor" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold">Tokyo Sushi</h3>
+                            <div class="flex items-center bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i> 4.9
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Japanese • $$ • 0.8 mi</p>
+                        <div class="flex items-center text-sm text-gray-500 mt-2">
+                            <i class="fas fa-clock mr-1"></i> 20-30 min
+                            <span class="mx-2">•</span>
+                            <span class="text-orange-600 font-medium">Free delivery</span>
+                        </div>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Sushi</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Ramen</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Japanese</span>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/913b1c3f-a134-4d4a-ac3a-1ff2b1dfc7fe.png" alt="Burger restaurant with stacked juicy burgers and fries" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold">Burger Shack</h3>
+                            <div class="flex items-center bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i> 4.5
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">American • $ • 1.5 mi</p>
+                        <div class="flex items-center text-sm text-gray-500 mt-2">
+                            <i class="fas fa-clock mr-1"></i> 30-45 min
+                            <span class="mx-2">•</span>
+                            <span class="text-orange-600 font-medium">$1.99 delivery</span>
+                        </div>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Burgers</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Fries</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Milkshakes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="restaurant-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83b03870-33e9-4b47-86b0-c1fac9ed3a21.png" alt="Mexican cantina with colorful decor and tacos on display" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold">Taco Fiesta</h3>
+                            <div class="flex items-center bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i> 4.6
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Mexican • $ • 0.9 mi</p>
+                        <div class="flex items-center text-sm text-gray-500 mt-2">
+                            <i class="fas fa-clock mr-1"></i> 15-25 min
+                            <span class="mx-2">•</span>
+                            <span class="text-orange-600 font-medium">Free delivery</span>
+                        </div>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Tacos</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Nachos</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Mexican</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <div id="itemModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                    <h3 class="text-xl font-bold">Customize Your Order</h3>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9d11869c-dcf7-4328-8c9a-2d6245e40d0a.png" alt="Margherita pizza with fresh basil leaves" class="w-20 h-20 rounded-lg object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-lg">Margherita Pizza</h4>
+                            <p class="text-gray-600">Classic pizza with tomato sauce, mozzarella, and basil</p>
+                            <p class="text-orange-600 font-bold mt-1">$12.99</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium text-gray-700 mb-3">Size</h5>
+                        <div class="flex space-x-3">
+                            <label class="flex-1">
+                                <input type="radio" name="size" class="peer hidden" checked>
+                                <div class="p-3 border rounded-lg peer-checked:border-orange-500 peer-checked:bg-orange-50 cursor-pointer text-center">
+                                    <p class="font-medium">Small</p>
+                                    <p class="text-sm text-gray-600">10 inch</p>
+                                </div>
+                            </label>
+                            <label class="flex-1">
+                                <input type="radio" name="size" class="peer hidden">
+                                <div class="p-3 border rounded-lg peer-checked:border-orange-500 peer-checked:bg-orange-50 cursor-pointer text-center">
+                                    <p class="font-medium">Medium</p>
+                                    <p class="text-sm text-gray-600">+$2.00</p>
+                                </div>
+                            </label>
+                            <label class="flex-1">
+                                <input type="radio" name="size" class="peer hidden">
+                                <div class="p-3 border rounded-lg peer-checked:border-orange-500 peer-checked:bg-orange-50 cursor-pointer text-center">
+                                    <p class="font-medium">Large</p>
+                                    <p class="text-sm text-gray-600">+$4.00</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium text-gray-700 mb-3">Add Extra Toppings</h5>
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="mr-3">
+                                    <span>Extra Cheese</span>
+                                </div>
+                                <span class="text-orange-600">+$1.50</span>
+                            </label>
+                            <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="mr-3">
+                                    <span>Pepperoni</span>
+                                </div>
+                                <span class="text-orange-600">+$2.50</span>
+                            </label>
+                            <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer">
+                                <div class="flex items-center">
+                                    <input type="checkbox" class="mr-3">
+                                    <span>Mushrooms</span>
+                                </div>
+                                <span class="text-orange-600">+$1.00</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-medium text-gray-700 mb-3">Special Instructions</h5>
+                        <textarea class="w-full border rounded-lg p-3 focus:ring-orange-500 focus:border-orange-500" placeholder="Any special requests or allergies..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center border rounded-lg">
+                            <button class="px-3 py-1 text-xl text-gray-600">-</button>
+                            <span class="px-4">1</span>
+                            <button class="px-3 py-1 text-xl text-gray-600">+</button>
+                        </div>
+                        <button class="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition">
+                            Add to Cart - $12.99
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="relative">
+                    <i class="fas fa-shopping-cart text-2xl text-orange-600"></i>
+                    <span class="absolute -top-2 -right-3 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </div>
+                <div class="ml-4">
+                    <p class="font-medium">3 items</p>
+                    <p class="text-sm text-gray-600">$22.47</p>
+                </div>
+            </div>
+            <button class="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition">
+                View Cart
+            </button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
+
